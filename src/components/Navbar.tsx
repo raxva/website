@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import LanguageSwitcher from "./LanguageSwitcher";
 
 const Navbar = () => {
@@ -14,7 +15,7 @@ const Navbar = () => {
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between">
         <div className="flex items-center gap-3">
-          <WingLogo />
+          <span className="text-2xl">🪽</span>
           <span className="text-lg font-bold tracking-tight text-foreground">Raxva</span>
         </div>
         <div className="flex items-center gap-6">
@@ -25,6 +26,9 @@ const Navbar = () => {
             <a href="#learn" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
               {t("nav.learn")}
             </a>
+            <Link to="/clients" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
+              {t("nav.clients")}
+            </Link>
           </div>
           <LanguageSwitcher />
         </div>
@@ -32,14 +36,5 @@ const Navbar = () => {
     </motion.nav>
   );
 };
-
-const WingLogo = () => (
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-foreground">
-    <path d="M2 12c1-3 4-8 10-8 3 0 5 1.5 6 3s1.5 4 1 7c-2-1-4-2-7-2-4 0-7 2-10 4 0-2 0-3 0-4z" />
-    <path d="M12 4c2 2 3 5 3 8" />
-    <path d="M8 8c1.5 1 2.5 3 3 5" />
-    <path d="M5 11c1 .5 2 2 2.5 4" />
-  </svg>
-);
 
 export default Navbar;

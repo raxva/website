@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   const { t } = useTranslation();
@@ -18,7 +19,7 @@ const Hero = () => {
           transition={{ duration: 0.8 }}
         >
           <div className="glass-panel mx-auto mb-8 inline-flex items-center gap-3 rounded-full px-5 py-2.5">
-            <WingLogoLarge />
+            <span className="text-lg">🪽</span>
             <span className="text-sm font-medium text-muted-foreground">{t("hero.subtitle")}</span>
           </div>
         </motion.div>
@@ -36,7 +37,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.25 }}
-          className="mb-4 font-persian text-3xl font-bold text-muted-foreground sm:text-4xl"
+          className="mb-2 font-persian text-3xl font-bold text-muted-foreground sm:text-4xl"
         >
           {t("hero.titlePersian")}
         </motion.p>
@@ -44,37 +45,51 @@ const Hero = () => {
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.35 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="mb-6 text-xl font-semibold tracking-wide text-foreground/70 uppercase"
+        >
+          {t("hero.motto")}
+        </motion.p>
+
+        <motion.p
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
           className="mx-auto mb-10 max-w-xl text-lg leading-relaxed text-muted-foreground"
         >
           {t("hero.description")}
         </motion.p>
 
-        <motion.a
-          href="#learn"
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.45 }}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className="glass-panel-hover inline-flex items-center gap-2 rounded-full px-8 py-3.5 text-sm font-semibold text-foreground"
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center"
         >
-          <PlayIcon />
-          {t("hero.cta")}
-        </motion.a>
+          <motion.a
+            href="#learn"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="glass-panel-hover inline-flex items-center gap-2 rounded-full px-8 py-3.5 text-sm font-semibold text-foreground"
+          >
+            <PlayIcon />
+            {t("hero.cta")}
+          </motion.a>
+
+          <Link to="/clients">
+            <motion.span
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-flex items-center gap-2 rounded-full bg-foreground px-8 py-3.5 text-sm font-semibold text-background transition-opacity hover:opacity-90"
+            >
+              🪽 {t("hero.webClient")}
+            </motion.span>
+          </Link>
+        </motion.div>
       </div>
     </section>
   );
 };
-
-const WingLogoLarge = () => (
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-foreground">
-    <path d="M2 12c1-3 4-8 10-8 3 0 5 1.5 6 3s1.5 4 1 7c-2-1-4-2-7-2-4 0-7 2-10 4 0-2 0-3 0-4z" />
-    <path d="M12 4c2 2 3 5 3 8" />
-    <path d="M8 8c1.5 1 2.5 3 3 5" />
-    <path d="M5 11c1 .5 2 2 2.5 4" />
-  </svg>
-);
 
 const PlayIcon = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">

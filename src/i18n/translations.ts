@@ -6,6 +6,7 @@ export const resources = {
         about: "About",
         learn: "Learn",
         clients: "Clients",
+        donate: "Donate",
       },
       hero: {
         title: "Raxva",
@@ -19,6 +20,7 @@ export const resources = {
       services: {
         title: "What We Run",
         subtitle: "Infrastructure for the people",
+        copyRelay: "Copy",
         nostr: {
           title: "Nostr",
           description: "Censorship-resistant social networking. Your keys, your identity, your voice.",
@@ -66,6 +68,21 @@ export const resources = {
           jitsiMeet: "Official Jitsi Meet app for mobile",
         },
       },
+      donate: {
+        title: "Support Us",
+        subtitle: "Help us keep decentralized infrastructure running for everyone.",
+        onchain: {
+          title: "Bitcoin (On-Chain)",
+          description: "Send BTC directly to our wallet",
+        },
+        lightning: {
+          title: "Bitcoin (Lightning)",
+          description: "Instant, low-fee payments via Lightning Network",
+        },
+        copy: "Copy",
+        copied: "Copied!",
+        thanks: "Every sat helps us stay independent and keep the servers running. Thank you! 🪽",
+      },
       footer: {
         tagline: "Building infrastructure for digital freedom.",
         rights: "All rights reserved.",
@@ -79,6 +96,7 @@ export const resources = {
         about: "درباره ما",
         learn: "آموزش",
         clients: "کلاینت‌ها",
+        donate: "حمایت مالی",
       },
       hero: {
         title: "Raxva",
@@ -92,6 +110,7 @@ export const resources = {
       services: {
         title: "خدمات ما",
         subtitle: "زیرساخت برای مردم",
+        copyRelay: "کپی",
         nostr: {
           title: "ناستر",
           description: "شبکه اجتماعی مقاوم در برابر سانسور. کلیدهای شما، هویت شما، صدای شما.",
@@ -138,6 +157,21 @@ export const resources = {
           comingSoon: "به زودی",
           jitsiMeet: "اپلیکیشن رسمی جیتسی میت برای موبایل",
         },
+      },
+      donate: {
+        title: "حمایت از ما",
+        subtitle: "به ما کمک کنید تا زیرساخت‌های غیرمتمرکز را برای همه فعال نگه داریم.",
+        onchain: {
+          title: "بیت‌کوین (آن‌چین)",
+          description: "بیت‌کوین مستقیماً به کیف پول ما ارسال کنید",
+        },
+        lightning: {
+          title: "بیت‌کوین (لایتنینگ)",
+          description: "پرداخت فوری و کم‌هزینه از طریق شبکه لایتنینگ",
+        },
+        copy: "کپی",
+        copied: "کپی شد!",
+        thanks: "هر ساتوشی به ما کمک می‌کند مستقل بمانیم و سرورها را فعال نگه داریم. ممنونیم! 🪽",
       },
       footer: {
         tagline: "ساخت زیرساخت برای آزادی دیجیتال.",

@@ -18,7 +18,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <div className="glass-panel mx-auto mb-8 inline-flex items-center gap-3 rounded-full px-5 py-2.5">
+          <div className="glass-panel mx-auto mb-8 inline-flex items-center gap-3 rounded-2xl px-5 py-2.5">
             <span className="text-lg">🪽</span>
             <span className="text-sm font-medium text-muted-foreground">{t("hero.subtitle")}</span>
           </div>

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 
@@ -48,8 +49,17 @@ const item = {
   show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
 };
 
+const RELAY_URL = "wss://relay.raxva.net";
+
 const Services = () => {
   const { t } = useTranslation();
+  const [relayCopied, setRelayCopied] = useState(false);
+
+  const copyRelay = async () => {
+    await navigator.clipboard.writeText(RELAY_URL);
+    setRelayCopied(true);
+    setTimeout(() => setRelayCopied(false), 2000);
+  };
 
   return (
     <section id="services" className="relative px-6 py-32">
@@ -94,6 +104,19 @@ const Services = () => {
               <p className="leading-relaxed text-muted-foreground">
                 {t(`services.${service.key}.description`)}
               </p>
+
+              {/* Relay link for Nostr */}
+              {service.key === "nostr" && (
+                <div className="mt-4 flex items-center gap-2 rounded-xl bg-accent/50 p-2.5">
+                  <code className="flex-1 truncate text-xs text-muted-foreground">{RELAY_URL}</code>
+                  <button
+                    onClick={copyRelay}
+                    className="shrink-0 rounded-lg bg-accent px-2.5 py-1 text-xs font-medium text-foreground transition-colors hover:bg-accent/80"
+                  >
+                    {relayCopied ? "✓" : t("services.copyRelay")}
+                  </button>
+                </div>
+              )}
             </motion.div>
           ))}
         </motion.div>

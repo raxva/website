@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const services = [
   {
     key: "nostr",
     color: "#8B5CF6",
+    serverUrl: "wss://relay.raxva.net",
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="12" r="10" />
@@ -17,6 +19,7 @@ const services = [
     key: "matrix",
     color: "#0DBD8B",
     comingSoon: true,
+    serverUrl: "matrix.raxva.net",
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0DBD8B" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <rect x="3" y="3" width="18" height="18" rx="2" />
@@ -28,10 +31,22 @@ const services = [
     key: "jitsi",
     color: "#508EF5",
     comingSoon: true,
+    serverUrl: "meet.raxva.net",
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#508EF5" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M15.6 11.6L22 7v10l-6.4-4.5v-1z" />
         <rect x="2" y="6" width="14" height="12" rx="2" />
+      </svg>
+    ),
+  },
+  {
+    key: "simplex",
+    color: "#E4405F",
+    comingSoon: true,
+    serverUrl: "simplex.raxva.net",
+    icon: (
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#E4405F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
       </svg>
     ),
   },
@@ -49,16 +64,16 @@ const item = {
   show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
 };
 
-const RELAY_URL = "wss://relay.raxva.net";
+
 
 const Services = () => {
   const { t } = useTranslation();
-  const [relayCopied, setRelayCopied] = useState(false);
+  const [copiedUrl, setCopiedUrl] = useState<string | null>(null);
 
-  const copyRelay = async () => {
-    await navigator.clipboard.writeText(RELAY_URL);
-    setRelayCopied(true);
-    setTimeout(() => setRelayCopied(false), 2000);
+  const copyUrl = async (url: string) => {
+    await navigator.clipboard.writeText(url);
+    setCopiedUrl(url);
+    setTimeout(() => setCopiedUrl(null), 2000);
   };
 
   return (
@@ -82,7 +97,7 @@ const Services = () => {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="grid gap-6 md:grid-cols-3"
+          className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
         >
           {services.map((service) => (
             <motion.div
@@ -91,7 +106,10 @@ const Services = () => {
               className="glass-panel-hover group relative rounded-2xl p-8"
             >
               {service.comingSoon && (
-                <span className="absolute top-4 right-4 rounded-full bg-accent px-3 py-1 text-xs font-medium text-muted-foreground">
+                <span
+                  className="absolute top-4 right-4 rounded-full px-3 py-1 text-xs font-medium"
+                  style={{ backgroundColor: service.color + "20", color: service.color }}
+                >
                   {t(`services.${service.key}.comingSoon`)}
                 </span>
               )}
@@ -105,18 +123,24 @@ const Services = () => {
                 {t(`services.${service.key}.description`)}
               </p>
 
-              {/* Relay link for Nostr */}
-              {service.key === "nostr" && (
-                <div className="mt-4 flex items-center gap-2 rounded-xl bg-accent/50 p-2.5">
-                  <code className="flex-1 truncate text-xs text-muted-foreground">{RELAY_URL}</code>
-                  <button
-                    onClick={copyRelay}
-                    className="shrink-0 rounded-lg bg-accent px-2.5 py-1 text-xs font-medium text-foreground transition-colors hover:bg-accent/80"
-                  >
-                    {relayCopied ? "✓" : t("services.copyRelay")}
-                  </button>
-                </div>
-              )}
+              {/* Server link */}
+              <div className="mt-4 flex items-center gap-2 rounded-xl bg-accent/50 p-2.5">
+                <code className="flex-1 truncate text-xs text-muted-foreground">{service.serverUrl}</code>
+                <button
+                  onClick={() => copyUrl(service.serverUrl)}
+                  className="shrink-0 rounded-lg bg-accent px-2.5 py-1 text-xs font-medium text-foreground transition-colors hover:bg-accent/80"
+                >
+                  {copiedUrl === service.serverUrl ? "✓" : t("services.copyRelay")}
+                </button>
+              </div>
+
+              {/* Clients link */}
+              <Link
+                to="/clients"
+                className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+              >
+                {t("services.viewClients")} →
+              </Link>
             </motion.div>
           ))}
         </motion.div>

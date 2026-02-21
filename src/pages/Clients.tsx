@@ -17,6 +17,10 @@ const jitsiClients = [
   { name: "Jitsi Meet", key: "jitsiMeet", platform: "iOS / Android", url: "https://jitsi.org/downloads/", color: "#508EF5" },
 ];
 
+const simplexClients = [
+  { name: "SimpleX Chat", key: "simplexChat", platform: "iOS / Android / Desktop", url: "https://simplex.chat/downloads/", color: "#E4405F" },
+];
+
 const container = {
   hidden: {},
   show: { transition: { staggerChildren: 0.1 } },
@@ -101,6 +105,15 @@ const Clients = () => {
             descKey="clients.jitsi.description"
             clients={jitsiClients}
             categoryKey="jitsi"
+            comingSoon
+          />
+
+          {/* SimpleX Clients */}
+          <ClientSection
+            titleKey="clients.simplex.title"
+            descKey="clients.simplex.description"
+            clients={simplexClients}
+            categoryKey="simplex"
             comingSoon
           />
         </div>

@@ -64,8 +64,6 @@ const item = {
   show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
 };
 
-
-
 const Services = () => {
   const { t } = useTranslation();
   const [copiedUrl, setCopiedUrl] = useState<string | null>(null);

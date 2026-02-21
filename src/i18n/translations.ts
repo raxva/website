@@ -21,6 +21,7 @@ export const resources = {
         title: "What We Run",
         subtitle: "Infrastructure for the people",
         copyRelay: "Copy",
+        viewClients: "Get Clients",
         nostr: {
           title: "Nostr",
           description: "Censorship-resistant social networking. Your keys, your identity, your voice.",
@@ -33,6 +34,11 @@ export const resources = {
         jitsi: {
           title: "Jitsi",
           description: "Private video conferencing. No account needed, no tracking, no limits.",
+          comingSoon: "Coming Soon",
+        },
+        simplex: {
+          title: "SimpleX",
+          description: "Private messaging without user IDs. Maximum privacy, zero metadata.",
           comingSoon: "Coming Soon",
         },
       },
@@ -66,7 +72,13 @@ export const resources = {
           description: "Video conferencing apps",
           comingSoon: "Coming Soon",
           jitsiMeet: "Official Jitsi Meet app for mobile",
+        simplex: {
+          title: "SimpleX Clients",
+          description: "Private messaging apps",
+          comingSoon: "Coming Soon",
+          simplexChat: "Official SimpleX Chat app — maximum privacy",
         },
+      },
       },
       donate: {
         title: "Support Us",
@@ -111,6 +123,7 @@ export const resources = {
         title: "خدمات ما",
         subtitle: "زیرساخت برای مردم",
         copyRelay: "کپی",
+        viewClients: "دریافت کلاینت",
         nostr: {
           title: "ناستر",
           description: "شبکه اجتماعی مقاوم در برابر سانسور. کلیدهای شما، هویت شما، صدای شما.",
@@ -123,6 +136,11 @@ export const resources = {
         jitsi: {
           title: "جیتسی",
           description: "ویدئو کنفرانس خصوصی. بدون نیاز به حساب کاربری، بدون ردیابی، بدون محدودیت.",
+          comingSoon: "به زودی",
+        },
+        simplex: {
+          title: "سیمپلکس",
+          description: "پیام‌رسانی خصوصی بدون شناسه کاربری. حداکثر حریم خصوصی، صفر متادیتا.",
           comingSoon: "به زودی",
         },
       },
@@ -156,6 +174,12 @@ export const resources = {
           description: "اپلیکیشن‌های ویدئو کنفرانس",
           comingSoon: "به زودی",
           jitsiMeet: "اپلیکیشن رسمی جیتسی میت برای موبایل",
+        },
+        simplex: {
+          title: "کلاینت‌های سیمپلکس",
+          description: "اپلیکیشن‌های پیام‌رسانی خصوصی",
+          comingSoon: "به زودی",
+          simplexChat: "اپلیکیشن رسمی سیمپلکس چت — حداکثر حریم خصوصی",
         },
       },
       donate: {

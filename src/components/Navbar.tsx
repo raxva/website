@@ -13,7 +13,7 @@ const Navbar = () => {
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6 }}
-      className="fixed top-4 left-4 right-4 z-50"
+      className="fixed top-4 left-0 right-0 z-50 px-4"
     >
       <div className="glass-panel mx-auto flex max-w-6xl items-center justify-between rounded-2xl px-3 py-2.5 sm:px-5 sm:py-3">
         <Link to="/" className="flex items-center gap-2 sm:gap-3">

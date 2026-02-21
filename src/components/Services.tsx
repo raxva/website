@@ -50,6 +50,18 @@ const services = [
       </svg>
     ),
   },
+  {
+    key: "deltachat",
+    color: "#338BFF",
+    comingSoon: true,
+    serverUrl: "deltachat.raxva.net",
+    icon: (
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#338BFF" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="2" y="4" width="20" height="16" rx="2" />
+        <path d="M22 7l-10 7L2 7" />
+      </svg>
+    ),
+  },
 ];
 
 const container = {
@@ -95,7 +107,7 @@ const Services = () => {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
+          className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5"
         >
           {services.map((service) => (
             <motion.div

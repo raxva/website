@@ -21,6 +21,10 @@ const simplexClients = [
   { name: "SimpleX Chat", key: "simplexChat", platform: "iOS / Android / Desktop", url: "https://simplex.chat/downloads/", color: "#E4405F" },
 ];
 
+const deltachatClients = [
+  { name: "Delta Chat", key: "deltachatApp", platform: "iOS / Android / Desktop", url: "https://delta.chat/download", color: "#338BFF" },
+];
+
 const container = {
   hidden: {},
   show: { transition: { staggerChildren: 0.1 } },
@@ -114,6 +118,15 @@ const Clients = () => {
             descKey="clients.simplex.description"
             clients={simplexClients}
             categoryKey="simplex"
+            comingSoon
+          />
+
+          {/* Delta Chat Clients */}
+          <ClientSection
+            titleKey="clients.deltachat.title"
+            descKey="clients.deltachat.description"
+            clients={deltachatClients}
+            categoryKey="deltachat"
             comingSoon
           />
         </div>

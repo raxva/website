@@ -40,6 +40,11 @@ export const resources = {
           title: "SimpleX",
           description: "Private messaging without user IDs. Maximum privacy, zero metadata.",
           comingSoon: "Coming Soon",
+      },
+        deltachat: {
+          title: "Delta Chat",
+          description: "Chat over email, decentralized and encrypted. No phone number required.",
+          comingSoon: "Coming Soon",
         },
       },
       learn: {
@@ -72,13 +77,19 @@ export const resources = {
           description: "Video conferencing apps",
           comingSoon: "Coming Soon",
           jitsiMeet: "Official Jitsi Meet app for mobile",
+        },
         simplex: {
           title: "SimpleX Clients",
           description: "Private messaging apps",
           comingSoon: "Coming Soon",
           simplexChat: "Official SimpleX Chat app — maximum privacy",
         },
-      },
+        deltachat: {
+          title: "Delta Chat Clients",
+          description: "Email-based messaging apps",
+          comingSoon: "Coming Soon",
+          deltachatApp: "Official Delta Chat app — chat over email",
+        },
       },
       donate: {
         title: "Support Us",
@@ -142,6 +153,11 @@ export const resources = {
           title: "سیمپلکس",
           description: "پیام‌رسانی خصوصی بدون شناسه کاربری. حداکثر حریم خصوصی، صفر متادیتا.",
           comingSoon: "به زودی",
+      },
+        deltachat: {
+          title: "دلتا چت",
+          description: "چت از طریق ایمیل، غیرمتمرکز و رمزنگاری شده. بدون نیاز به شماره تلفن.",
+          comingSoon: "به زودی",
         },
       },
       learn: {
@@ -180,6 +196,12 @@ export const resources = {
           description: "اپلیکیشن‌های پیام‌رسانی خصوصی",
           comingSoon: "به زودی",
           simplexChat: "اپلیکیشن رسمی سیمپلکس چت — حداکثر حریم خصوصی",
+        },
+        deltachat: {
+          title: "کلاینت‌های دلتا چت",
+          description: "اپلیکیشن‌های پیام‌رسانی مبتنی بر ایمیل",
+          comingSoon: "به زودی",
+          deltachatApp: "اپلیکیشن رسمی دلتا چت — چت از طریق ایمیل",
         },
       },
       donate: {

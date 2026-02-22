@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const BITCOIN_ADDRESS = "bc1qYOUR_ADDRESS_HERE";
-const LIGHTNING_ADDRESS = "lnurl1YOUR_LNURL_HERE";
+const BITCOIN_ADDRESS = "bc1qfw30k9ztahppatweycnll05rzmrn6u07slehmc";
+const LIGHTNING_ADDRESS = "dezh@coinos.io";
 
 const Donate = () => {
   const { t } = useTranslation();
